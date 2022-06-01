@@ -24,6 +24,9 @@ app.use(compression())
 
 // routes
 
+app.route('/').get((req, res) => {
+    res.sendFile(process.cwd() + '/index.html')
+})
 
 app.listen(port, () => {
     console.log(`App is listening to ${port}`)
