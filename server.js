@@ -21,6 +21,7 @@ mongoose.connect(
 app.use('/', routes)
 app.use(helmet())
 app.use(compression())
+app.use('/static', express.static('./static'))
 
 // routes
 
