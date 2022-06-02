@@ -16,6 +16,7 @@ const getAllProducts = (req, res, next) => {
 // POST new product
 
 const newProduct = (req, res, next) => {
+    console.log(req)
     Products.create({
         name: req.body.name,
         category: req.body.category,
