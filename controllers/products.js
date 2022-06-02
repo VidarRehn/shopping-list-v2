@@ -16,28 +16,16 @@ const getAllProducts = (req, res, next) => {
 // POST new product
 
 const newProduct = (req, res, next) => {
-    Products.findOne({name: req.body.name}, (err, data) => {
-        if (!data) {
-            const newProduct = new Products({
-                name: req.body.name,
-                category: req.body.category,
-                inShoppingList: false
-            })
-
-            newProduct.save((err, data) => {
-                if (err) {
-                    return res.json({Error: err})
-                } else {
-                    return res.json(data)
-                }
-            })
-        } else {
+    Products.insertOne({
+        name: req.body.name,
+        category: req.body.category,
+        inShoppingList: false
+        }, (err, data) => {
             if (err) {
-                return res.json(`Something went wrong, please try again. Error: ${err}`)
+                res.json(err)
             } else {
-                return res.json({message: "Product already exists"})
+                res.json(data)
             }
-        }
     })
 }
 
