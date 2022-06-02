@@ -16,10 +16,7 @@ const getAllProducts = (req, res, next) => {
 // POST new product
 
 const newProduct = (req, res, next) => {
-    console.log(`req.body is ${req.body}`)
-    console.log(`req.file is ${req.file}`)
-    console.log(`req.files is ${req.files}`)
-    Products.insertOne({
+    Products.create({
         name: req.body.name,
         category: req.body.category,
         inShoppingList: false
