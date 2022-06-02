@@ -22,6 +22,7 @@ app.use('/', routes)
 app.use(helmet())
 app.use(compression())
 app.use('/static', express.static('./static'))
+app.use(express.urlencoded({extended: true}))
 
 // routes
 
