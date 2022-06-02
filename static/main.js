@@ -17,9 +17,9 @@ addProductForm.addEventListener('submit', async (e) => {
 
     await fetch('/products', {
         method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
+        // headers: {
+        //     'Content-Type': 'application/json'
+        // },
         body: JSON.stringify({
             name: productName.value,
             category: productCategory.value
