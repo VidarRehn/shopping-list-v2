@@ -3,7 +3,7 @@ const express = require('express')
 const compression = require('compression')
 const routes = require('./routes/products')
 const mongoose = require('mongoose')
-const helmet = require('helmet')
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -22,7 +22,8 @@ app.use('/', routes)
 app.use(helmet())
 app.use(compression())
 app.use('/static', express.static('./static'))
-app.use(express.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 // routes
 
