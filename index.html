@@ -8,10 +8,16 @@
 </head>
 <body>
     <h1>Welcome to the Shopping List API</h1>
-    <form id="new-product" enctype="multipart/form-data ">
-        <input type="text" id="name" name="name" placeholder="Name">
+    <form id="new-product" autocomplete="off">
+        <input type="text" id="name" name="name" placeholder="Name" autocapitalize="none">
         <input type="text" id="category" name="category" placeholder="Category">
         <button>Submit</button>
+    </form>
+    <form id="search" autocomplete="off">
+        <input type="text" id="search-input" placeholder="Search for item" autocapitalize="none">
+        <div>
+            <ul id="autocomplete"></ul>
+        </div>
     </form>
     <ul class="shopping-list"></ul>
 

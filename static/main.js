@@ -33,8 +33,6 @@ const shoppingList = document.querySelector('.shopping-list')
 
 getAllProducts().then(array => {
     const productsToBuy = array.filter(product => product.inShoppingList == true)
-    console.log(productsToBuy)
-
     productsToBuy.forEach(product => {
         const newListItem = document.createElement('li')
         newListItem.innerText = product.name
@@ -51,4 +49,28 @@ getAllProducts().then(array => {
     })
 })
 
-// remove item from list
+// automcomplete during search input
+
+const searchInput = document.querySelector('#search-input')
+const autocompleteContainer = document.querySelector('#autocomplete')
+
+getAllProducts().then(array => {
+    const notInList = array.filter(product => product.inShoppingList == false)
+
+    searchInput.addEventListener('input', (e) => {
+        e.preventDefault()
+        autocompleteContainer.innerHTML = ''
+
+        notInList.forEach(product => {
+            const productName = product.name
+            if (e.target.value != ''){
+                if (productName.includes(x.target.value)){
+                    const newListItem = document.createElement('li')
+                    newListItem.innerText = productName
+                    autocompleteContainer.append(newListItem)
+                }
+            }
+        })
+    })
+
+})
