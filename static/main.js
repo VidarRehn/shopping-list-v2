@@ -13,7 +13,7 @@ const productName = document.querySelector('#name')
 const productCategory = document.querySelector('#category')
 
 addProductForm.addEventListener('submit', async (e) => {
-    // e.preventDefault()
+    e.preventDefault()
 
     await fetch('/products', {
         method: 'post',
@@ -25,6 +25,8 @@ addProductForm.addEventListener('submit', async (e) => {
             category: productCategory.value
         })
     })
+
+    location.reload()
 })
 
 // render shopping list on start
@@ -96,6 +98,18 @@ getAllProducts().then(array => {
                 }
             }
         })
-    })
 
+        const enterNewProductButton = document.createElement('button')
+        enterNewProductButton.innerText = "Can't find item. Click here"
+        enterNewProductButton.addEventListener('click', (e) => {
+            e.preventDefault()
+            addProductForm.classList.remove('hidden')
+            autocompleteContainer.innerHTML = ''
+        })
+        autocompleteContainer.append(enterNewProductButton)
+
+        if (e.target.value == '') {
+            autocompleteContainer.innerHTML = ''
+        }
+    })
 })
