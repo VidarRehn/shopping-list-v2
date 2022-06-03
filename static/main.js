@@ -43,7 +43,7 @@ getAllProducts().then(array => {
         removeButton.dataset.id = product._id
         removeButton.addEventListener('click', async (e) => {
             await fetch(`/products/remove/${e.target.dataset.id}`, {
-                method: 'delete'
+                method: 'put'
             })
         })
         newListItem.append(removeButton)
