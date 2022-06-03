@@ -6,7 +6,10 @@ const getAllProducts = async () => {
 }
 
 
-getAllProducts().then(data => console.log(data))
+getAllProducts().then(array => {
+    array.sort((a,b) => a.category - b.category)
+    console.log(array)
+})
 
 const addProductForm = document.querySelector('#new-product')
 const productName = document.querySelector('#name')
@@ -36,9 +39,11 @@ const shoppingList = document.querySelector('.shopping-list')
 const renderItems = () => {
     getAllProducts().then(array => {
         const productsToBuy = array.filter(product => product.inShoppingList == true)
+        productsToBuy.sort((a,b) => a.category - b.category)
         productsToBuy.forEach(product => {
             const newListItem = document.createElement('li')
             newListItem.innerText = product.name
+            newListItem.classList.add(product.category)
             const removeButton = document.createElement('button')
     
             // remove item from list
@@ -100,7 +105,7 @@ getAllProducts().then(array => {
         })
 
         const enterNewProductButton = document.createElement('button')
-        enterNewProductButton.innerText = "Can't find item. Click here"
+        enterNewProductButton.innerText = "Hittar inte? Lägg till vara"
         enterNewProductButton.addEventListener('click', (e) => {
             e.preventDefault()
             addProductForm.classList.remove('hidden')

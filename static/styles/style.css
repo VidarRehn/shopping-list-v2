@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -104,7 +105,6 @@ main .shopping-list li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: lightcoral;
   border-radius: 10px;
 }
 
@@ -115,6 +115,46 @@ main .shopping-list li button {
 
 main .shopping-list li button:hover {
   background-color: lightgray;
+}
+
+main .shopping-list .grönt {
+  background-color: #7ac17d;
+}
+
+main .shopping-list .bröd-och-bak {
+  background-color: #be935f;
+}
+
+main .shopping-list .konserver {
+  background-color: #baa9a9;
+}
+
+main .shopping-list .olja-mm {
+  background-color: #d48989;
+}
+
+main .shopping-list .kolhydrater {
+  background-color: #d5d58a;
+}
+
+main .shopping-list .mejeri {
+  background-color: #8fd4bd;
+}
+
+main .shopping-list .protein {
+  background-color: #a990bf;
+}
+
+main .shopping-list .fryst {
+  background-color: #869acc;
+}
+
+main .shopping-list .godis-och-snacks {
+  background-color: #cc7ca4;
+}
+
+main .shopping-list .icke-mat {
+  background-color: #c9c9c9;
 }
 
 ul {

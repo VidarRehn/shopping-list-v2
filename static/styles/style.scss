@@ -73,7 +73,6 @@ main {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: lightcoral;
             border-radius: 10px;
 
             button {
@@ -84,6 +83,46 @@ main {
                     background-color: lightgray;
                 }
             }
+        }
+
+        .grönt {
+            background-color: rgb(122, 193, 125);
+        }
+
+        .bröd-och-bak {
+            background-color: rgb(190, 147, 95);
+        }
+
+        .konserver {
+            background-color: rgb(186, 169, 169);
+        }
+
+        .olja-mm {
+            background-color: rgb(212, 137, 137);
+        }
+
+        .kolhydrater {
+            background-color: rgb(213, 213, 138);
+        }
+
+        .mejeri {
+            background-color: rgb(143, 212, 189);
+        }
+
+        .protein {
+            background-color: rgb(169, 144, 191);
+        }
+
+        .fryst {
+            background-color: rgb(134, 154, 204);
+        }
+
+        .godis-och-snacks {
+            background-color: rgb(204, 124, 164);
+        }
+
+        .icke-mat {
+            background-color: rgb(201, 201, 201);
         }
     }
 }
