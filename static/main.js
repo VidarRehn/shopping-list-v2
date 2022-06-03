@@ -34,4 +34,12 @@ const shoppingList = document.querySelector('.shopping-list')
 getAllProducts().then(array => {
     const productsToBuy = array.filter(product => product.inShoppingList == true)
     console.log(productsToBuy)
+
+    productsToBuy.forEach(product => {
+        const newListItem = document.createElement('li')
+        newListItem.innerHTML = `
+        <p>${product.name}</p>
+        `
+        shoppingList.append(newListItem)
+    })
 })
