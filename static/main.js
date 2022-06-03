@@ -32,6 +32,6 @@ addProductForm.addEventListener('submit', async (e) => {
 const shoppingList = document.querySelector('.shopping-list')
 
 getAllProducts().then(array => {
-    const productsToBuy = array.map(product => product.inShoppingList == true)
+    const productsToBuy = array.filter(product => product.inShoppingList == true)
     console.log(productsToBuy)
 })
