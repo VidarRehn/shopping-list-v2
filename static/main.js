@@ -42,9 +42,9 @@ getAllProducts().then(array => {
         removeButton.innerText = 'Remove'
         removeButton.dataset.id = product._id
         removeButton.addEventListener('click', async (e) => {
-            console.log(e.target)
-            console.log(e.target.dataset.id)
-            await fetch(`/products/remove/${e.target.dataset.id}`)
+            await fetch(`/products/remove/${e.target.dataset.id}`, {
+                method: 'delete'
+            })
         })
         newListItem.append(removeButton)
         shoppingList.append(newListItem)
