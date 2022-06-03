@@ -46,6 +46,9 @@ const renderItems = () => {
                 await fetch(`/products/remove/${e.target.dataset.id}`, {
                     method: 'put'
                 })
+
+                const parentListItem = e.target.parentElement
+                parentListItem.remove()
             })
             newListItem.append(removeButton)
             shoppingList.append(newListItem)
@@ -87,7 +90,7 @@ getAllProducts().then(array => {
                         searchInput.value = ''
                         autocompleteContainer.innerHTML = ''
                         shoppingList.innerHTML = ''
-                        
+
                         renderItems()
                     })
                 }
