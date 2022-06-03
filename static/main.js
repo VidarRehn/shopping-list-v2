@@ -64,7 +64,7 @@ getAllProducts().then(array => {
         notInList.forEach(product => {
             const productName = product.name
             if (e.target.value != ''){
-                if (productName.includes(x.target.value)){
+                if (productName.includes(e.target.value)){
                     const newListItem = document.createElement('li')
                     newListItem.innerText = productName
                     autocompleteContainer.append(newListItem)
