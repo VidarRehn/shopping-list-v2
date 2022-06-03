@@ -86,7 +86,8 @@ getAllProducts().then(array => {
 
                         searchInput.value = ''
                         autocompleteContainer.innerHTML = ''
-
+                        shoppingList.innerHTML = ''
+                        
                         renderItems()
                     })
                 }
