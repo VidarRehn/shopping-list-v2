@@ -31,25 +31,30 @@ addProductForm.addEventListener('submit', async (e) => {
 
 const shoppingList = document.querySelector('.shopping-list')
 
-getAllProducts().then(array => {
-    const productsToBuy = array.filter(product => product.inShoppingList == true)
-    productsToBuy.forEach(product => {
-        const newListItem = document.createElement('li')
-        newListItem.innerText = product.name
-        const removeButton = document.createElement('button')
-
-        // remove item from list
-        removeButton.innerText = 'Remove'
-        removeButton.dataset.id = product._id
-        removeButton.addEventListener('click', async (e) => {
-            await fetch(`/products/remove/${e.target.dataset.id}`, {
-                method: 'put'
+const renderItems = () => {
+    getAllProducts().then(array => {
+        const productsToBuy = array.filter(product => product.inShoppingList == true)
+        productsToBuy.forEach(product => {
+            const newListItem = document.createElement('li')
+            newListItem.innerText = product.name
+            const removeButton = document.createElement('button')
+    
+            // remove item from list
+            removeButton.innerText = 'Remove'
+            removeButton.dataset.id = product._id
+            removeButton.addEventListener('click', async (e) => {
+                await fetch(`/products/remove/${e.target.dataset.id}`, {
+                    method: 'put'
+                })
             })
+            newListItem.append(removeButton)
+            shoppingList.append(newListItem)
         })
-        newListItem.append(removeButton)
-        shoppingList.append(newListItem)
     })
-})
+}
+
+renderItems()
+
 
 // automcomplete during search input
 
@@ -78,6 +83,11 @@ getAllProducts().then(array => {
                         await fetch(`/products/add/${e.target.dataset.id}`, {
                             method: 'put'
                         })
+
+                        searchInput.value = ''
+                        autocompleteContainer.innerHTML = ''
+
+                        renderItems()
                     })
                 }
             }
