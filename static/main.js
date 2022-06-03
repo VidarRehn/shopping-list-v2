@@ -13,7 +13,7 @@ const productName = document.querySelector('#name')
 const productCategory = document.querySelector('#category')
 
 addProductForm.addEventListener('submit', async (e) => {
-    e.preventDefault()
+    // e.preventDefault()
 
     await fetch('/products', {
         method: 'post',

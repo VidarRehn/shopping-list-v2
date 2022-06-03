@@ -19,7 +19,7 @@ const newProduct = (req, res, next) => {
     Products.create({
         name: req.body.name,
         category: req.body.category,
-        inShoppingList: false
+        inShoppingList: true
         }, (err, data) => {
             if (err) {
                 res.json(err)
