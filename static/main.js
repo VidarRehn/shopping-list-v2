@@ -39,16 +39,16 @@ getAllProducts().then(array => {
         const newListItem = document.createElement('li')
         newListItem.innerHTML = `
         <p>${product.name}</p>
-        <button class="remove-btn" data-id="${product._id}" onclick="removeItem(this)">Remove</button>
+        <button class="remove-btn" data-id="${product._id}">Remove</button>
         `
         shoppingList.append(newListItem)
+
+        // remove item from list
+        document.querySelectorAll('remove-btn').addEventListener('click', async (e) => {
+            console.log(e)
+            console.log(e.target)
+            console.log(e.target.dataset.id)
+            await fetch(`/products/remove/${e.dataset.id}`)
+        })
     })
 })
-
-// remove item from list
-
-const removeItem = async (e) => {
-    console.log(e)
-    console.log(e.dataset.id)
-    await fetch(`/products/remove/${e.dataset.id}`)
-}
