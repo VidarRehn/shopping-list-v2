@@ -19,19 +19,33 @@ main {
 
     form#search {
         position: relative;
+        width: 200px;
+
+        input {
+            width: 100%;
+            padding: 5px;
+        }
 
         ul { 
             width: 100%;
             background-color: white;
             position: absolute;
+            box-shadow: 0 4px 10px 0px black;
 
             li {
+                padding: 5px;
 
                 &:hover {
                     background-color: lightgray;
                 }
             }
         }
+    }
+
+    form#new-product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -40,5 +54,5 @@ ul {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }

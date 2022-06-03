@@ -104,6 +104,8 @@ getAllProducts().then(array => {
         enterNewProductButton.addEventListener('click', (e) => {
             e.preventDefault()
             addProductForm.classList.remove('hidden')
+            searchInput.classList.add('hidden')
+            shoppingList.classList.add('hidden')
             autocompleteContainer.innerHTML = ''
         })
         autocompleteContainer.append(enterNewProductButton)
