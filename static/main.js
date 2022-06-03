@@ -37,6 +37,8 @@ getAllProducts().then(array => {
         const newListItem = document.createElement('li')
         newListItem.innerText = product.name
         const removeButton = document.createElement('button')
+
+        // remove item from list
         removeButton.innerText = 'Remove'
         removeButton.dataset.id = product._id
         removeButton.addEventListener('click', async (e) => {
@@ -67,7 +69,16 @@ getAllProducts().then(array => {
                 if (productName.includes(e.target.value)){
                     const newListItem = document.createElement('li')
                     newListItem.innerText = productName
+                    newListItem.dataset.id = product._id
                     autocompleteContainer.append(newListItem)
+
+                    //add item to shopping list
+
+                    newListItem.addEventListener('click', async (e) => {
+                        await fetch(`/products/add/${e.target.dataset.id}`, {
+                            method: 'put'
+                        })
+                    })
                 }
             }
         })
