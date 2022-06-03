@@ -14,8 +14,6 @@ const productCategory = document.querySelector('#category')
 
 addProductForm.addEventListener('submit', async (e) => {
     e.preventDefault()
-    console.log(productName.value)
-    console.log(productCategory.value)
 
     await fetch('/products', {
         method: 'post',
@@ -27,4 +25,13 @@ addProductForm.addEventListener('submit', async (e) => {
             category: productCategory.value
         })
     })
+})
+
+// render shopping list on start
+
+const shoppingList = document.querySelector('.shopping-list')
+
+getAllProducts().then(array => {
+    const productsToBuy = array.map(product => product.inShoppingList == true)
+    console.log(productsToBuy)
 })

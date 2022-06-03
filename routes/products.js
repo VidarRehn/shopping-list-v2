@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const productsController = require('../controllers/products')
-// const multer = require('multer')
-// const upload = multer()
 
 router.get('/products', productsController.getAllProducts)
 router.post('/products', productsController.newProduct)
