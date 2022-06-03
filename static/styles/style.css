@@ -59,7 +59,16 @@ main form#search ul li:hover {
   background-color: lightgray;
 }
 
+main form#search ul button {
+  border: none;
+  padding: 5px;
+  background-color: transparent;
+  color: blue;
+  text-decoration: underline;
+}
+
 main form#new-product {
+  width: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,6 +79,42 @@ main form#new-product {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main form#new-product input, main form#new-product select, main form#new-product button {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+}
+
+main .shopping-list {
+  margin-top: 30px;
+  width: 300px;
+}
+
+main .shopping-list li {
+  padding: 10px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: lightcoral;
+  border-radius: 10px;
+}
+
+main .shopping-list li button {
+  border: none;
+  padding: 5px 5px;
+}
+
+main .shopping-list li button:hover {
+  background-color: lightgray;
 }
 
 ul {

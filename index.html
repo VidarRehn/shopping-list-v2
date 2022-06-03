@@ -9,17 +9,29 @@
 </head>
 <body>
     <header>
-        <h1>Shopping List</h1>
+        <h1>Inköpslista</h1>
     </header>
     <main>
         <form id="search" autocomplete="off">
-            <input type="text" id="search-input" placeholder="Search for item" autocapitalize="none">
+            <input type="text" id="search-input" placeholder="Sök efter vara" autocapitalize="none">
             <ul id="autocomplete"></ul>
         </form>
         <form id="new-product" autocomplete="off" class="hidden">
-            <input type="text" id="name" name="name" placeholder="Name" autocapitalize="none">
-            <input type="text" id="category" name="category" placeholder="Category">
-            <button>Submit</button>
+            <input type="text" id="name" name="name" placeholder="Namn" autocapitalize="none">
+            <select name="category" id="category">
+                <option selected disabled>Kategori</option>
+                <option value="grönt">Grönt</option>
+                <option value="bröd-och-bak">Bröd och bak</option>
+                <option value="konserver">Konserver</option>
+                <option value="olja-mm">Olja mm</option>
+                <option value="kolhydrater">Kolhydrater</option>
+                <option value="mejeri">Mejeri</option>
+                <option value="protein">Protein</option>
+                <option value="fryst">Fryst</option>
+                <option value="godis-och-snacks">Godis & snacks</option>
+                <option value="icke-mat">Icke-mat</option>
+            </select>
+            <button>Lägg till</button>
         </form>
         <ul class="shopping-list"></ul>
     </main>

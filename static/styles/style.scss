@@ -39,13 +39,52 @@ main {
                     background-color: lightgray;
                 }
             }
+
+            button {
+                border: none;
+                padding: 5px;
+                background-color: transparent;
+                color: blue;
+                text-decoration: underline;
+            }
         }
     }
 
     form#new-product {
+        width: 200px;
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        input, select, button {
+            margin-bottom: 10px;
+            width: 100%;
+            padding: 5px;
+        }
+    }
+
+    .shopping-list {
+        margin-top: 30px;
+        width: 300px;
+
+        li {
+            padding: 10px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: lightcoral;
+            border-radius: 10px;
+
+            button {
+                border: none;
+                padding: 5px 5px;
+
+                &:hover {
+                    background-color: lightgray;
+                }
+            }
+        }
     }
 }
 
