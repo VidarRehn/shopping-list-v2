@@ -22,8 +22,10 @@ app.use('/', routes)
 app.use(helmet())
 app.use(compression())
 app.use('/static', express.static('./static'))
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({extended: true}))
+// app.use(bodyParser.json())
+app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 
 // routes
 
