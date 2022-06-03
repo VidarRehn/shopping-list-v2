@@ -5,12 +5,6 @@ const getAllProducts = async () => {
     return data
 }
 
-
-getAllProducts().then(array => {
-    array.sort((a,b) => a.category - b.category)
-    console.log(array)
-})
-
 const addProductForm = document.querySelector('#new-product')
 const productName = document.querySelector('#name')
 const productCategory = document.querySelector('#category')
@@ -47,7 +41,7 @@ const renderItems = () => {
             const removeButton = document.createElement('button')
     
             // remove item from list
-            removeButton.innerText = 'Remove'
+            removeButton.innerText = 'Ta bort'
             removeButton.dataset.id = product._id
             removeButton.addEventListener('click', async (e) => {
                 await fetch(`/products/remove/${e.target.dataset.id}`, {
