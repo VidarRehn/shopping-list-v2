@@ -19,12 +19,12 @@ mongoose.connect(
 
 //middlewares
 
-app.use('/', routes)
 app.use(helmet())
 app.use(compression())
 app.use('/static', express.static('./static'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
+app.use('/', routes)
 
 // routes
 
